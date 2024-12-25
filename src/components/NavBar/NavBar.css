@@ -1,0 +1,36 @@
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    padding: 10px 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+nav h1 {
+    font-size: 24px;
+    color: orange;
+}
+
+nav div {
+    display: flex;
+    gap: 10px;
+}
+
+nav button {
+    background-color:orange;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: orange;
+}
+
