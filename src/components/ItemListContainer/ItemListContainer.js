@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react"
-import { getProducts } from '../../asyncMocks'
-import ItemList from './ItemList'
+import { useState, useEffect } from "react";
+import { getProducts } from "../../asyncMocks";
+import ItemList from "../itemList/ItemList"
+
+
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
 
