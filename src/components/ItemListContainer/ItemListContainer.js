@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import {getProducts} from '../../asyncMock'
-import itemList from '../itemList/itemList'
+import ItemList from '../itemList/itemList'
+import asyncMock from '../../asyncMocks'
 
 
 const ItemListContainer = ({greeting}) => {
