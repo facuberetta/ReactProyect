@@ -1,29 +1,25 @@
-import { useState, useEffect } from "react";
-import { getProducts } from "../../asyncMock";
-
+import { useState, useEffect } from "react"
+import { getProducts } from '../../asyncMocks'
+import ItemList from './ItemList'
 const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
         getProducts()
-            .then((response) => {
-                setProducts(response);
+            .then(response => {
+                setProducts(response)
             })
-            .catch((error) => {
-                console.error("Error fetching products:", error);
-            });
-    }, []);
+            .catch(error => {
+                console.error(error)
+            })
+    }, [])
 
     return (
         <div>
             <h1>{greeting}</h1>
-            {products.length > 0 ? (
-                <ItemList products={products} />
-            ) : (
-                <p>Cargando productos...</p>
-            )}
+            <ItemList products={products} />
         </div>
-    );
-};
+    )
+}
 
-export default ItemListContainer;
+export default ItemListContainer

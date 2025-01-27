@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ItemCount from './ItemCount' 
+import itemCount from './itemCount' 
 
 const ItemDetail = () => {
     const [cartQuantity, setCartQuantity] = useState(0)
@@ -19,5 +19,8 @@ const ItemDetail = () => {
         </div>
     )
 }
++
 
 export default ItemDetail
+
+
