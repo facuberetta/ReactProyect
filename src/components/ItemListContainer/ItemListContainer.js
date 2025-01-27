@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../../asyncMocks";
-import ItemList from "../itemList/ItemList"
-
+import ItemList from "../ItemList/ItemList";
+import PropTypes from "prop-types";
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
@@ -23,5 +23,8 @@ const ItemListContainer = ({ greeting }) => {
         </div>
     )
 }
+ItemListContainer.propTypes = {
+    greeting: PropTypes.string.isRequired,
+};
 
 export default ItemListContainer
