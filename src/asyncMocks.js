@@ -4,7 +4,6 @@ const products = [
         name:'amalaya',
         price: 5000,
         category: 'Malbec',
-        img: 'https://www.espaciovino.com.ar/media/default/0001/61/thumb_60937_default_big.jpeg',
         stock: 25,
         description:'Brillante color rubí con bordes violetas. Fresas, frambuesas y fruta madura con toque de pimienta y aromas de especias y elegantes notas florales',
     },
