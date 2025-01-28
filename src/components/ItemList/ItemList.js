@@ -1,15 +1,11 @@
-const ItemList = ({ products }) => {
-    return (
-        <div>
-            {products.map((product) => (
-                <div key={product.id}>
-                    <h2>{product.name}</h2>
-                    <p>{product.description}</p>
-                    <p>Precio: ${product.price}</p>
-                </div>
-            ))}
+import Item from '../Item/Item'
+
+const ItemList = ({Products}) => {
+    return(
+        <div className="ListGroup">
+            {Products.map(prod => <Item key={prod.id} {...prod}/>)}
         </div>
-    );
-};
+    )
+}
 
 export default ItemList;

@@ -1,4 +1,6 @@
+import React from 'react';
 import cart from './Assets/carrito.png'
+
 const CartWidget = () => {
     return (
     <div>
