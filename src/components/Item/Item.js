@@ -15,6 +15,13 @@ const Item = ({id, name, img, price, stock}) => {
                 <p className="Info">
                     Precio: ${price}
                 </p>
+                <p className='Info'>
+                    stock disponible: {stock}
+                </p>
             </section>
+            <footer className='ItemFooter'>
+                <link to= {'/item/${id}'} className= 'option'>Ver detalle</link>
+            </footer>
         </article>
+    )
 }
