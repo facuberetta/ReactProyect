@@ -1,6 +1,10 @@
-import 'Item.css'
+import { Link, useParams } from 'react-router-dom'
+import './Item.css'
 
 const Item = ({id, name, img, price, stock}) => {
+
+    const {itemId} =useParams()
+
     return (
         <article className='CardItem'>
             <header className='Header'>
@@ -20,8 +24,11 @@ const Item = ({id, name, img, price, stock}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <link to= {'/item/${id}'} className= 'option'>Ver detalle</link>
+                <Link to= {`/item/${id}` } className= 'option'>Ver detalle</link>
             </footer>
         </article>
     )
 }
+
+
+export default Item 

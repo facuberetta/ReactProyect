@@ -5,12 +5,12 @@ import PropTypes from "prop-types";
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
     const [products, setProducts] = useState([])
+        console.log(products)
+    const { categoryId } = useParams()
 
-    const { categoryId} = useParams ()
-
-    useEffect (() => {
+    useEffect(() => {
         const asyncFunc = categoryId ? getProductsByCategory : getProducts
 
         asyncFunc(categoryId)
@@ -24,14 +24,14 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <div>
-            <h1>{greeting}</h1>
-            <ItemList products={products} />
+            <h1>{Bienvenidos!}</h1>
+            {products.length > 0 &&
+                <ItemList products={products} />
+            }
         </div>
     )
 }
 
-ItemListContainer.propTypes = {
-    greeting: PropTypes.string.isRequired,
-};
+
 
 export default ItemListContainer;
