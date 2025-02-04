@@ -24,7 +24,7 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            <h1>{Bienvenidos!}</h1>
+            <h1>{"Bienvenidos!"}</h1>
             {products.length > 0 &&
                 <ItemList products={products} />
             }
