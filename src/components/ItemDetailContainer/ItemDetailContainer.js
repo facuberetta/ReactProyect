@@ -4,24 +4,24 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ({ addToCart }) => {
-  const [product, setProduct] = useState([]);
-  const { itemId } = useParams();
+const [product, setProduct] = useState([]);
+const { itemId } = useParams();
 
-  useEffect(() => {
+useEffect(() => {
     getProductsById(itemId)
-      .then(response => {
+        .then(response => {
         setProduct(response);
-      })
-      .catch(error => {
+        })
+        .catch(error => {
         console.error(error);
-      });
-  }, [itemId]);
+        });
+    }, [itemId]);
 
-  return (
+return (
     <div className='ItemDetailContainer'>
-      <ItemDetail {...product} addToCart={addToCart} />
+        <ItemDetail {...product} addToCart={addToCart} />
     </div>
-  );
+    );
 };
 
 export default ItemDetailContainer;
