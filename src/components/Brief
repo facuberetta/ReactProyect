@@ -1,0 +1,75 @@
+# Brief del Proyecto: Emma Wines
+
+## Nombre del Proyecto:
+Emma Wines - Tienda de Vinos Online
+
+## Descripción General:
+Emma Wines es una tienda online especializada en la venta de vinos seleccionados de distintas bodegas, ofreciendo una experiencia de compra intuitiva y detallada para los amantes del vino. La plataforma permitirá a los usuarios explorar diferentes categorías de vinos, conocer sus características y realizar compras de manera sencilla.
+
+## Público Objetivo:
+- Amantes del vino de todas las edades (mayores de 18 años)
+- Personas que buscan vinos de calidad para consumo personal o regalo
+- Restaurantes y bares interesados en adquirir vinos para su carta
+
+## Objetivos del Proyecto:
+1. Ofrecer una plataforma intuitiva y atractiva para la compra de vinos online.
+2. Implementar un sistema de categorías para facilitar la búsqueda de productos.
+3. Permitir a los usuarios visualizar detalles de cada vino, incluyendo bodega, tipo, maridaje y precio.
+4. Integrar un carrito de compras y sistema de checkout.
+5. Garantizar una experiencia de usuario óptima en dispositivos móviles y de escritorio.
+6. Facilitar la gestión del stock y actualización de productos desde el backend.
+
+## Características Principales:
+### 1. Página Principal
+- Banner promocional
+- Sección de productos destacados
+- Acceso rápido a categorías
+- Información sobre Emma Wines
+
+### 2. Catálogo de Productos
+- Filtro por categoría (Tintos, Blancos, Espumantes, Rosados, etc.)
+- Búsqueda por nombre o bodega
+- Vista en cuadrícula o lista
+- Ordenamiento por precio y popularidad
+
+### 3. Página de Detalle del Producto
+- Imagen del producto
+- Descripción detallada (bodega, región, variedad, añada, maridaje)
+- Precio y stock disponible
+- Botón para agregar al carrito
+
+### 4. Carrito de Compras
+- Vista previa de los productos seleccionados
+- Opción para modificar cantidad o eliminar productos
+- Total de la compra
+- Botón para proceder al checkout
+
+### 5. Checkout
+- Formulario de datos de envío y contacto
+- Métodos de pago disponibles
+- Confirmación de compra
+
+## Tecnologías Utilizadas:
+- **Frontend:** React.js, React Router, CSS Modules
+- **Backend:** Firebase (para gestión de productos y pedidos)
+- **Estado:** Context API o Redux (según necesidades futuras)
+- **Métodos de Pago:** Integración con MercadoPago o PayPal
+
+## Diseño y UX/UI:
+- Estilo minimalista y elegante, acorde con la temática del vino
+- Colores sobrios y tipografías refinadas
+- Diseño responsive para móviles y tablets
+
+## Fases del Desarrollo:
+1. Estructura del proyecto y configuración de React
+2. Creación de componentes principales (NavBar, ItemList, ItemDetail, Cart, Checkout)
+3. Integración de rutas con React Router
+4. Conexión con Firebase para carga de productos
+5. Implementación del carrito de compras
+6. Integración de métodos de pago
+7. Optimización y pruebas
+
+## Diferenciación y Valor Agregado:
+Emma Wines se destaca por su selección curada de vinos de alta calidad, una experiencia de compra fluida y recomendaciones personalizadas según los gustos del usuario. Además, ofreceremos contenido educativo sobre vinos y maridajes.
+
+

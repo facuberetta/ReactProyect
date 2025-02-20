@@ -2,10 +2,11 @@ import './ItemCount.css'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import React from 'react';
-
+import AddItemButton from '../addItemButton/addItemButton';
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     const [quantity, setQuantity] = useState(initial)
+
 
     const increment = () => {
         if (quantity < stock) {
@@ -26,11 +27,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <h4 className='number'>{quantity}</h4>
                 <button className="button" onClick={increment}>+</button>
             </div>
-            <div>
-                <button className="button" onClick={() => onAdd(quantity)} disabled={quantity <= 0}>
-                    Agregar al carrito
-                </button>
-            </div>
+            <AddItemButton
+                onAdd={onAdd}
+                quantity={quantity}
+                stock={stock}
+            />
         </div>
     )
 }
@@ -41,4 +42,4 @@ ItemCount.propTypes = {
     onAdd: PropTypes.func.isRequired,
 };
 
-export default ItemCount
+export default ItemCount;

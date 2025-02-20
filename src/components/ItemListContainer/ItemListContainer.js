@@ -1,35 +1,38 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { getProducts, getProductsByCategory } from "../../asyncMocks";
 import ItemList from "../ItemList/ItemList";
-import PropTypes from "prop-types";
-import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([])
-        console.log(products)
-    const { categoryId } = useParams()
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
+        setLoading(true);
+        setError(null);
 
-        asyncFunc(categoryId)
-            .then(response => {
-                setProducts(response)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-            }, [categoryId])
+        const fetchProducts = categoryId ? getProductsByCategory : getProducts;
+
+        fetchProducts(categoryId)
+            .then(response => setProducts(response))
+            .catch(err => setError("Hubo un error al cargar los productos"))
+            .finally(() => setLoading(false));
+    }, [categoryId]);
 
     return (
         <div>
-            <h1>{"Bienvenidos!"}</h1>
-            {products.length > 0 &&
+            <h1>¡Bienvenidos a nuestra tienda de vinos!</h1>
+            
+            {loading && <p>Cargando productos...</p>}
+            {error && <p style={{ color: "red" }}>{error}</p>}
+
+            {!loading && !error && products.length > 0 && (
                 <ItemList products={products} />
-            }
+            )}
         </div>
-    )
+    );
 }
 
 

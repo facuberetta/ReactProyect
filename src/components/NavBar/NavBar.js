@@ -1,21 +1,40 @@
 import { Link } from "react-router-dom";
-import CartWidget from "../CartWidget/CartWidget"
+import { useState } from "react";
+import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css';
-import React from "react";
 
 const NavBar = () => {
+    const [showCategories, setShowCategories] = useState(false);
+
     return (
         <nav className="NavBar">
-            <Link to ='/'>
+            <Link to="/" className="logo">
                 <h1>Emma Wines</h1>
-            </Link>        
-        <div className="categories">
-            <Link to={'/category/Malbec'} className={({isActive}) => isActive ? 'ActiveOption' : 'option'}/>
-            <Link to={'/category/Cabernet%Sauvignon'} className={({isActive}) => isActive ? 'ActiveOption' : 'option'}/>
-            <Link to={'/category/Petit%Verdot'} className={({isActive}) => isActive ? 'ActiveOption' : 'option'}/>
-        </div>
-        <CartWidget />
+            </Link>
+
+            <ul className="nav-links">
+                <li><Link to="/">Home</Link></li>
+
+                <li className="dropdown">
+                    <button onClick={() => setShowCategories(!showCategories)}>
+                        Categorías ▼
+                    </button>
+                    {showCategories && (
+                        <ul className="dropdown-menu">
+                            <li><Link to="/category/Malbec">Malbec</Link></li>
+                            <li><Link to="/category/Cabernet-Sauvignon">Cabernet Sauvignon</Link></li>
+                            <li><Link to="/category/Petit-Verdot">Petit Verdot</Link></li>
+                        </ul>
+                    )}
+                </li>
+
+                <li><Link to="/contacto">Contacto</Link></li>
+            </ul>
+
+
+            <CartWidget />
         </nav>
-    )
+    );
 }
-export default NavBar
+
+export default NavBar;

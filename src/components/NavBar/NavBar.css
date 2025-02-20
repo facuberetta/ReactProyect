@@ -1,35 +1,65 @@
-nav {
+.NavBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
-    padding: 10px 20px;
+    background-color: #3e1f1f;
+    padding: 15px 30px;
     color: white;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
-nav h1 {
-    font-size: 24px;
-    color: orange;
+.logo h1 {
+    font-size: 26px;
+    color: #f4a261;
+    text-decoration: none;
 }
 
-nav div {
+.nav-links {
+    list-style: none;
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
-nav button {
-    background-color:orange;
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a, .dropdown button {
     color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: 0.3s;
+    background: none;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
 }
 
-nav button:hover {
-    background-color: orange;
+.nav-links a:hover, .dropdown button:hover {
+    color: #f4a261; 
 }
 
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #3e1f1f;
+    list-style: none;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu li {
+    padding: 5px 10px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    color: #f4a261;
+}

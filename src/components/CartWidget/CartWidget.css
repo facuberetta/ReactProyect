@@ -1,0 +1,27 @@
+.cart-widget {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 35px; /* Ajustar tamaño del ícono */
+    height: auto;
+}
+
+.cart-count {
+    background-color: #f4a261;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
