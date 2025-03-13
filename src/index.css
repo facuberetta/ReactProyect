@@ -12,4 +12,61 @@ code {
     monospace;
 }
 
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Efecto de elevación */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de las imágenes */
+.product-image {
+  object-fit: cover; /* Asegura que las imágenes no se deformen */
+  height: 250px; /* Ajusta la altura de las imágenes */
+}
+
+/* Estilo de los títulos */
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Estilo del texto */
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Botón personalizado */
+.product-button {
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.product-button:hover {
+  background-color: #0056b3; /* Cambio de color al pasar el cursor */
+  border-color: #0056b3;
+}
+
+/* Estilo para el contenedor y la cabecera */
+h1 {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+
 

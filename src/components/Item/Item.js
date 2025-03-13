@@ -1,9 +1,9 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link,} from 'react-router-dom'
 import './Item.css'
 
 const Item = ({id, name, img, price, stock}) => {
 
-    const {itemId} =useParams()
+
 
     return (
         <article className='CardItem'>
