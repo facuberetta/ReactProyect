@@ -1,27 +1,22 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useCart } from "./../context/cartContext";
 
-const Cart = ({ cartItems }) => {
-const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-};
+const Cart = () => {
+    const { cart, removeFromCart, clearCart } = useCart();
 
-return (
-    <div>
-        <h2>Tu Carrito</h2>
-            <ul>
-                {cartItems.map(item => (
-                <li key={item.id}>
-                {item.name} - {item.quantity} x ${item.price} = ${item.price * item.quantity}
-                </li>
-        ))}
-            </ul>
-        <h3>Total: ${calculateTotal()}</h3>
-            <Link to="/checkout">
-            <button>Ir al Checkout</button>
-            </Link>
-    </div>
-);
+    return (
+        <div>
+            <h2>Carrito</h2>
+            {cart.map((item) => (
+        <div key={item.id}>
+            <p>{item.name} - Cantidad: {item.quantity}</p>
+            <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
+        </div>
+    ))}
+            <button onClick={clearCart}>Vaciar Carrito</button>
+        </div>
+    );
 };
 
 export default Cart;
+
+
