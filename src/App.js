@@ -3,13 +3,13 @@ import NavBar from './components/NavBar/NavBar.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './components/Cart/Cart';
+import Cart from './components/Cart/Cart.js';
 import Checkout from './components/Checkout/Checkout';
-import { CartProvider } from "../context/cartContext";
+import { CartProvider } from './Context/cartContext.js'; 
 
 function App() {
   return (
-    <CartProvider> {}
+    <CartProvider>
       <div className="App">
         <BrowserRouter>
           <NavBar />
