@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { getProducts, getProductsByCategory } from "../../asyncMocks";
-import ItemList from "../ItemList/ItemList";
+import { db } from '../../firebaseConfig';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -13,12 +14,21 @@ const ItemListContainer = () => {
         setLoading(true);
         setError(null);
 
-        const fetchProducts = categoryId ? getProductsByCategory : getProducts;
+        const fetchProducts = async () => {
+            try {
+                const productsRef = collection(db, "productos"); 
+                const q = categoryId ? query(productsRef, where("category", "==", categoryId)) : productsRef;
+                const querySnapshot = await getDocs(q);
+                const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setProducts(items);
+            } catch (err) {
+                setError("Hubo un error al cargar los productos");
+            } finally {
+                setLoading(false);
+            }
+        };
 
-        fetchProducts(categoryId)
-            .then(response => setProducts(response))
-            .catch(err => setError("Hubo un error al cargar los productos"))
-            .finally(() => setLoading(false));
+        fetchProducts();
     }, [categoryId]);
 
     return (
@@ -34,7 +44,5 @@ const ItemListContainer = () => {
         </div>
     );
 }
-
-
 
 export default ItemListContainer;
