@@ -1,40 +1,106 @@
+/* Variables globales para colores y estilos reutilizables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #f4a261;
+  --dark-bg: #3e1f1f;
+  --light-text: #ffffff;
+  --gray-bg: #f8f9fa;
+  --border-radius: 10px;
+}
 
-.App {
+/* Reset de estilos básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--gray-bg);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Encabezado */
+header {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Estilos para la lista de productos */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-price {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.product-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.product-button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Pie de página */
+footer {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
 }
-

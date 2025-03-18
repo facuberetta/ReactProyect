@@ -12,6 +12,9 @@ import { db } from './firebaseConfig.js';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'; 
 import Store from './components/store.js';
+import styles from './components/Item/Item.module.css';
+
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -67,5 +70,9 @@ function App() {
     </CartProvider>
   );
 }
+
+const Item = () => {
+  return <div className={styles.CardItem}>...</div>;
+};
 
 export default App;

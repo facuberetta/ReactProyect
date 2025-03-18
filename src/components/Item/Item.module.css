@@ -1,0 +1,53 @@
+.CardItem {
+    border: 1px solid #e0e0e0; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 16px; /* Espaciado interno */
+    margin: 16px; /* Espaciado externo */
+    text-align: center; /* Centrar texto */
+    transition: transform 0.2s, box-shadow 0.2s; /* Efecto de transición */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.CardItem:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.Header {
+    font-size: 1.5em; /* Tamaño de fuente para el encabezado */
+    margin-bottom: 10px; /* Espaciado inferior */
+    color: #333; /* Color del texto */
+}
+
+.ItemImg {
+    max-width: 100%; /* Imagen responsiva */
+    height: auto; /* Mantener proporciones */
+    border-radius: 4px; /* Bordes redondeados para la imagen */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.Info {
+    font-size: 1.2em; /* Tamaño de fuente para la información */
+    margin: 5px 0; /* Espaciado vertical */
+    color: #555; /* Color del texto */
+}
+
+.ItemFooter {
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.option {
+    text-decoration: none; /* Sin subrayado */
+    color: #007bff; /* Color del enlace */
+    font-weight: bold; /* Negrita */
+    padding: 8px 16px; /* Espaciado interno */
+    border: 1px solid #007bff; /* Borde del botón */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.2s, color 0.2s; /* Efecto de transición */
+}
+
+.option:hover {
+    background-color: #007bff; /* Fondo azul al pasar el mouse */
+    color: #ffffff; /* Texto blanco al pasar el mouse */
+}
